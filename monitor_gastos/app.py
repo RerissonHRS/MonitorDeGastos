@@ -18,7 +18,7 @@ if st.button("Salvar"):
         nova_transacao = Transacao(tipo, categoria, descricao, valor)
         nova_transacao.salvar()
         st.success("Registro salvo com sucesso!")
-        st.experimental_rerun()  # Atualiza a página após salvar
+        st.rerun()  # Atualiza a página após salvar (force-reflesh)
     else:
         st.error("Preencha todos os campos!")
 
