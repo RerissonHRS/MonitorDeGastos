@@ -18,7 +18,13 @@ if st.button("Salvar"):
         nova_transacao = Transacao(tipo, categoria, descricao, valor)
         nova_transacao.salvar()
         st.success("Registro salvo com sucesso!")
-        st.rerun()  # Atualiza a página após salvar (force-reflesh)
+        st.rerun()  # Atualiza a página após salvar o registro
+    elif valor <= 0:
+        st.error("O valor deve ser maior que zero!")
+    elif not descricao:
+        st.error("A descrição não pode estar vazia!")
+    elif not tipo or not categoria:
+        st.error("Selecione o tipo e a categoria!")
     else:
         st.error("Preencha todos os campos!")
 
